@@ -5,9 +5,15 @@ import { getServiceBySlug, travelServices, typingServices } from './data/service
 import { destinations } from './data/destinations'
 
 const contactLocations = [
-  { division: 'UNITY TYPING', location: 'Musaffah Shabiya 10', phone: '0501966823' },
-  { division: 'UNITY TYPING BRANCH', location: 'Abu Dhabi, UAE', phone: '0567579426' },
-  { division: 'UNITY TRAVELS', location: 'Musaffah Shabiya', phone: '0567579422' },
+  { division: 'UNITY TYPING', location: 'Musaffah, Shabiya 10, Abu Dhabi, UAE', phone: '0501966823', displayPhone: '050 196 6823', whatsapp: '971501966823' },
+  { division: 'UNITY TYPING — ABU DHABI BRANCH', location: 'Abu Dhabi, UAE', phone: '0567579426', displayPhone: '056 757 9426', whatsapp: '971567579426' },
+  { division: 'UNITY TRAVELS', location: 'Musaffah, Shabiya, Abu Dhabi, UAE', phone: '0567579422', displayPhone: '056 757 9422', whatsapp: '971567579422' },
+]
+
+const socialLinks = [
+  { name: 'Facebook', shortName: 'FB', href: 'https://www.facebook.com/share/1BVLsQdziT/?mibextid=wwXIfr', label: 'Unity Typing & Travels on Facebook' },
+  { name: 'Instagram', shortName: 'IG', href: 'https://www.instagram.com/unity_typing?stkn=MTU4bWN2cWc4bzRieA%3D%3D&utm_source=qr', label: 'Unity Typing on Instagram' },
+  { name: 'TikTok', shortName: 'TT', href: 'https://www.tiktok.com/@unity_typing?_r=1&_t=ZS-99t50HJREo9', label: 'Unity Typing on TikTok' },
 ]
 
 const logoSrc = `${import.meta.env.BASE_URL}unity_logo.png`
@@ -62,7 +68,7 @@ function App() {
 
   return (
     <div className="site-shell">
-      <div className="utility-bar"><span>UAE SERVICES &amp; TRAVEL SUPPORT</span><span className="follow-us">Follow us <b>Unity Typing: @unity_typing</b><b>Unity Travels: @unity_travels_uae</b></span></div>
+      <div className="utility-bar"><span>UAE SERVICES &amp; TRAVEL SUPPORT</span><span className="follow-us"><span>Follow us</span>{socialLinks.map((social) => <a key={social.name} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}>{social.shortName}</a>)}<b>Unity Typing: @unity_typing</b><b>Unity Travels: @unity_travels_uae</b></span></div>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Unity Typing & Travels home"><img className="brand-logo" src={logoSrc} alt="Unity Typing & Travels logo" /><span><strong>UNITY TYPING &amp; TRAVELS</strong><small>OFFICIAL COMPANY NAME</small></span></a>
         <button className="menu-toggle" type="button" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /><span /><b>Menu</b></button>
@@ -86,12 +92,12 @@ function App() {
           <button className={`division-card travel-card ${activeDivision === 'travels' ? 'is-active' : ''}`} type="button" onClick={() => chooseDivision('travels')}><span className="card-number">02 / UNITY TRAVELS</span><span className="division-icon">✈</span><span className="division-title">Travel &amp;<br />tourism services</span><span className="division-list">Flights&nbsp; · &nbsp;Hotels&nbsp; · &nbsp;Holidays</span><span className="card-arrow">↗</span></button>
         </div></section>
 
-        <section className="services-section"><div className="section-heading section-heading-inline"><div><p className="eyebrow"><span /> {activeDivision === 'typing' ? 'Unity Typing' : 'Unity Travels'}</p><h2>Support that moves<br /><em>with you.</em></h2></div><p className="section-side-copy">Explore a starting selection of services. Select a card to review the current service detail structure.</p></div><div className="service-grid">{services.map((service) => <article className="service-card" key={service.slug}><span className="service-icon">{service.icon}</span><h3>{service.name}</h3><p>{service.shortDescription}</p><button className="service-card-link" type="button" onClick={() => openService(service.slug)}>View service details <span>↗</span></button></article>)}</div></section>
+        <section className="services-section"><div className="section-heading section-heading-inline"><div><p className="eyebrow"><span /> {activeDivision === 'typing' ? 'Unity Typing' : 'Unity Travels'}</p><h2>Support that moves<br /><em>with you.</em></h2></div><p className="section-side-copy">Explore a starting selection of services. Select a card to review the current service detail structure.</p></div><div className="service-grid">{services.map((service) => <article className="service-card" key={service.slug}><span className="service-icon">{service.icon}</span><h3>{service.name}</h3><p>{service.shortDescription}</p><button className="service-card-link" type="button" onClick={() => openService(service.slug)}>View service details <span>↗</span></button></article>)}</div>{activeDivision === 'travels' && <p className="service-note">Additional travel services are available. Contact Unity Travels for assistance.</p>}</section>
 
         <section className="destination-section"><div className="section-heading section-heading-inline"><div><p className="eyebrow"><span /> A world in reach</p><h2>Where will you<br /><em>go next?</em></h2></div><a className="text-link" href="#contact">Plan a journey <span>↗</span></a></div><div className="destination-grid">{destinations.map((destination) => <article className="destination-card" key={destination.slug}><img src={destination.image} alt={`${destination.name} travel destination`} loading="lazy" /><div><span>{destination.shortDescription}</span><h3>{destination.name}</h3></div><a href="#contact" aria-label={`Ask about ${destination.name}`}>↗</a></article>)}</div></section>
 
         <section className="about-section" id="about"><div className="about-number">U<span>/</span>01</div><div><p className="eyebrow"><span /> About Unity</p><h2>Clarity for the<br /><em>journey ahead.</em></h2></div><p>Unity Typing &amp; Travels brings government, documentation, business support and travel enquiries together under one approachable UAE-focused brand. The details matter. So does the way you move through them.</p></section>
-        <section className="contact-section" id="contact"><div><p className="eyebrow"><span /> Your next move</p><h2>Have a question?<br /><em>Let’s talk.</em></h2><p className="contact-intro">Connect with the Unity team at the location that suits your enquiry.</p></div><div className="contact-panel"><div className="contact-list">{contactLocations.map((contact) => <div className="contact-location" key={contact.division}><span>{contact.division}</span><p>{contact.location}</p><a href={`tel:${contact.phone}`}>{contact.phone}</a></div>)}</div><small>No email, opening hours, WhatsApp link or map details have been supplied yet.</small></div></section>
+        <section className="contact-section" id="contact"><div><p className="eyebrow"><span /> Your next move</p><h2>Have a question?<br /><em>Let’s talk.</em></h2><p className="contact-intro">Connect with the Unity team at the location that suits your enquiry.</p><div className="social-panel"><p className="eyebrow"><span /> Follow Us</p><div className="social-links">{socialLinks.map((social) => <a key={social.name} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}><strong>{social.shortName}</strong><span>{social.name}</span></a>)}</div><p className="social-handle">Unity Travels: @unity_travels_uae <small>No separate Unity Travels URL has been supplied.</small></p></div></div><div className="contact-panel"><div className="contact-list">{contactLocations.map((contact) => <div className="contact-location" key={contact.division}><span>{contact.division}</span><p>{contact.location}</p><a className="contact-phone" href={`tel:${contact.phone}`}>{contact.displayPhone}</a><div className="contact-actions"><a href={`tel:${contact.phone}`}>Call</a><a href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a></div></div>)}</div><small>No email, opening hours or map details have been supplied yet.</small></div></section>
       </main>}
       <footer className="site-footer"><a className="brand" href="#top"><img className="brand-logo" src={logoSrc} alt="Unity Typing & Travels logo" /><span><strong>UNITY TYPING &amp; TRAVELS</strong><small>OFFICIAL COMPANY NAME</small></span></a><p>Government services &amp; travel support, together.</p><span>© 2026 Unity Typing &amp; Travels</span></footer>
     </div>

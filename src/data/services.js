@@ -15,34 +15,44 @@ const placeholderDetails = {
 }
 
 export const serviceCategories = [
-  { slug: 'government-documentation', name: 'Government & Documentation', division: 'typing', serviceSlugs: ['emirates-id', 'government-services', 'document-services'] },
-  { slug: 'visa-immigration', name: 'Visa & Immigration', division: 'typing', serviceSlugs: ['visa-immigration'] },
+  { slug: 'government-documentation', name: 'Government & Documentation', division: 'typing', serviceSlugs: ['government-typing-services', 'emirates-id', 'certificate-attestation', 'document-services'] },
+  { slug: 'visa-immigration', name: 'Visa & Immigration', division: 'typing', serviceSlugs: ['visa-related-services', 'golden-visa', 'family-visa'] },
+  { slug: 'business-services', name: 'Business Services', division: 'typing', serviceSlugs: ['business-setup-services'] },
   { slug: 'labour-mohre', name: 'Labour / MOHRE', division: 'typing', serviceSlugs: [], placeholder: true },
-  { slug: 'business-services', name: 'Business Services', division: 'typing', serviceSlugs: ['business-services', 'pro-services'] },
   { slug: 'other-services', name: 'Other Services', division: 'typing', serviceSlugs: [], placeholder: true },
-  { slug: 'flights', name: 'Flights', division: 'travels', serviceSlugs: ['flights'] },
-  { slug: 'hotels', name: 'Hotels', division: 'travels', serviceSlugs: ['hotels'] },
-  { slug: 'holidays', name: 'Holidays', division: 'travels', serviceSlugs: ['holidays'] },
-  { slug: 'travel-visas', name: 'Travel Visas', division: 'travels', serviceSlugs: ['travel-visas'] },
-  { slug: 'tours', name: 'Tours & Activities', division: 'travels', serviceSlugs: ['tours-activities'] },
+  { slug: 'flights', name: 'Flights', division: 'travels', serviceSlugs: ['airline-ticket-booking', 'flight-reservations'] },
+  { slug: 'hotels', name: 'Hotels', division: 'travels', serviceSlugs: ['hotel-booking'] },
+  { slug: 'holidays', name: 'Holidays', division: 'travels', serviceSlugs: ['holiday-packages', 'family-holidays'] },
+  { slug: 'travel-services', name: 'Travel Services', division: 'travels', serviceSlugs: ['international-local-travel', 'travel-arrangements', 'business-travel', 'travel-consultation'] },
+  { slug: 'travel-visas', name: 'Travel Visas', division: 'travels', serviceSlugs: ['visa-services'] },
+  { slug: 'tours', name: 'Tours & Packages', division: 'travels', serviceSlugs: ['tour-packages', 'destination-packages'] },
 ]
 
 const typingServiceSeeds = [
-  ['visa-immigration', 'Visa & Immigration', 'Visa & Immigration', '◈', 'A clear starting point for visa applications, renewals and related support.', 'A starting point for discussing visa and immigration-related support with Unity.'],
-  ['emirates-id', 'Government & Documentation', 'Emirates ID', '▣', 'Guidance for Emirates ID applications, renewals and replacement requests.', 'A starting point for discussing Emirates ID application, renewal or replacement support with Unity.'],
-  ['government-services', 'Government & Documentation', 'Government Services', '⌘', 'Professional assistance with government applications and documentation.', 'A starting point for discussing government application and documentation support with Unity.'],
-  ['business-services', 'Business Services', 'Business Services', '↗', 'Support for business setup, licensing and corporate documentation.', 'A starting point for discussing business setup, licensing and corporate documentation support with Unity.'],
-  ['document-services', 'Government & Documentation', 'Document Services', '▤', 'Typing, document clearing, attestation and translation support.', 'A starting point for discussing typing, document clearing, attestation or translation support with Unity.'],
-  ['pro-services', 'Business Services', 'PRO Services', '✦', 'Administrative support for government and corporate workflows.', 'A starting point for discussing government and corporate administrative support with Unity.'],
+  ['government-typing-services', 'Government & Documentation', 'Government Typing Services', '⌘', 'Government typing and application support.', 'Unity Typing provides government typing service enquiries and application support.'],
+  ['visa-related-services', 'Visa & Immigration', 'Visa-related Services', '◈', 'Visa-related service enquiries and support.', 'Unity Typing provides visa-related service enquiries and support.'],
+  ['emirates-id', 'Government & Documentation', 'Emirates ID Services', '▣', 'Emirates ID service enquiries and support.', 'Unity Typing provides Emirates ID service enquiries and support.'],
+  ['certificate-attestation', 'Government & Documentation', 'Certificate Attestation', '◇', 'Certificate attestation service enquiries.', 'Unity Typing provides certificate attestation service enquiries.'],
+  ['business-setup-services', 'Business Services', 'Business Setup Services', '↗', 'Business setup service enquiries and support.', 'Unity Typing provides business setup service enquiries and support.'],
+  ['golden-visa', 'Visa & Immigration', 'Golden Visa Services', '✦', 'Golden Visa service enquiries and support.', 'Unity Typing provides Golden Visa service enquiries and support.'],
+  ['family-visa', 'Visa & Immigration', 'Family Visa Services', '◎', 'Family Visa service enquiries and support.', 'Unity Typing provides Family Visa service enquiries and support.'],
+  ['tadbeer-services', 'Government & Documentation', 'Tadbeer-related Services', '▤', 'Tadbeer-related service enquiries and support.', 'Unity Typing provides Tadbeer-related service enquiries and support.'],
+  ['document-services', 'Government & Documentation', 'Document-related Services', '▥', 'Document-related service enquiries and support.', 'Unity Typing provides document-related service enquiries and support.'],
 ]
 
 const travelServiceSeeds = [
-  ['flights', 'Flights', 'Flights', '✈', 'Flight ticket and airline booking assistance for your next journey.', 'A starting point for discussing flight ticket and airline booking enquiries with Unity Travels.'],
-  ['hotels', 'Hotels', 'Hotels', '▰', 'Find accommodation options to suit your route, dates and travel style.', 'A starting point for discussing accommodation and hotel booking enquiries with Unity Travels.'],
-  ['holidays', 'Holidays', 'Holidays', '✺', 'Explore holiday packages and tailored travel planning.', 'A starting point for discussing holiday planning and package enquiries with Unity Travels.'],
-  ['travel-visas', 'Travel Visas', 'Travel Visas', '◎', 'Guidance for international tourist and visit visa enquiries.', 'A starting point for discussing international tourist and visit visa enquiries with Unity Travels.'],
-  ['destinations', 'Destinations', 'Destinations', '⌁', 'Discover routes, places and experiences worth building a trip around.', 'A starting point for discussing destination planning with Unity Travels.'],
-  ['tours-activities', 'Tours & Activities', 'Tours & Activities', '◇', 'Add memorable experiences and activities to your itinerary.', 'A starting point for discussing tours, activities and custom travel planning with Unity Travels.'],
+  ['airline-ticket-booking', 'Flights', 'Airline Ticket Booking', '✈', 'Airline ticket booking enquiries with Unity Travels.', 'Unity Travels provides airline ticket booking enquiries.'],
+  ['hotel-booking', 'Hotels', 'Hotel Booking', '▰', 'Hotel booking enquiries with Unity Travels.', 'Unity Travels provides hotel booking enquiries.'],
+  ['holiday-packages', 'Holidays', 'Holiday Packages', '✺', 'Holiday package enquiries with Unity Travels.', 'Unity Travels provides holiday package enquiries.'],
+  ['international-local-travel', 'Travel Services', 'International and Local Travel', '⌁', 'International and local travel enquiries.', 'Unity Travels provides international and local travel enquiries.'],
+  ['visa-services', 'Travel Visas', 'Visa Services', '◎', 'Travel visa service enquiries with Unity Travels.', 'Unity Travels provides travel visa service enquiries.'],
+  ['flight-reservations', 'Flights', 'Flight Reservations', '✈', 'Flight reservation enquiries with Unity Travels.', 'Unity Travels provides flight reservation enquiries.'],
+  ['travel-arrangements', 'Travel Services', 'Travel Arrangements', '◇', 'Travel arrangement enquiries with Unity Travels.', 'Unity Travels provides travel arrangement enquiries.'],
+  ['tour-packages', 'Tours & Packages', 'Tour Packages', '✺', 'Tour package enquiries with Unity Travels.', 'Unity Travels provides tour package enquiries.'],
+  ['family-holidays', 'Holidays', 'Family Holidays', '⌂', 'Family holiday enquiries with Unity Travels.', 'Unity Travels provides family holiday enquiries.'],
+  ['business-travel', 'Travel Services', 'Business Travel', '▣', 'Business travel enquiries with Unity Travels.', 'Unity Travels provides business travel enquiries.'],
+  ['destination-packages', 'Tours & Packages', 'Destination Packages', '⌁', 'Destination package enquiries with Unity Travels.', 'Unity Travels provides destination package enquiries.'],
+  ['travel-consultation', 'Travel Services', 'Travel Consultation', '◇', 'Travel consultation enquiries with Unity Travels.', 'Unity Travels provides travel consultation enquiries.'],
 ]
 
 function createService([slug, category, name, icon, shortDescription, fullDescription], division) {
