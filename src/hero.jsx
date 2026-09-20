@@ -1,4 +1,4 @@
-function Hero(props) {
+function Hero() {
     return(
         <section>
         <h1>WELCOME TO UNITY TYPING!</h1>
