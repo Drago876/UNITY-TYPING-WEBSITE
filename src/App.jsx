@@ -10,6 +10,8 @@ const contactLocations = [
   { division: 'UNITY TRAVELS', location: 'Musaffah Shabiya', phone: '0567579422' },
 ]
 
+const logoSrc = `${import.meta.env.BASE_URL}unity_logo.png`
+
 function getServiceSlugFromHash() {
   const match = window.location.hash.match(/^#services\/(.+)$/)
   return match ? match[1] : null
@@ -62,7 +64,7 @@ function App() {
     <div className="site-shell">
       <div className="utility-bar"><span>UAE SERVICES &amp; TRAVEL SUPPORT</span><span className="follow-us">Follow us <b>Unity Typing: @unity_typing</b><b>Unity Travels: @unity_travels_uae</b></span></div>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Unity Typing & Travels home"><img className="brand-logo" src="/unity_logo.png" alt="Unity Typing & Travels logo" /><span><strong>UNITY TYPING &amp; TRAVELS</strong><small>OFFICIAL COMPANY NAME</small></span></a>
+        <a className="brand" href="#top" aria-label="Unity Typing & Travels home"><img className="brand-logo" src={logoSrc} alt="Unity Typing & Travels logo" /><span><strong>UNITY TYPING &amp; TRAVELS</strong><small>OFFICIAL COMPANY NAME</small></span></a>
         <button className="menu-toggle" type="button" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /><span /><b>Menu</b></button>
         <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
           <a href="#top" onClick={() => setMenuOpen(false)}>Home</a>
@@ -91,7 +93,7 @@ function App() {
         <section className="about-section" id="about"><div className="about-number">U<span>/</span>01</div><div><p className="eyebrow"><span /> About Unity</p><h2>Clarity for the<br /><em>journey ahead.</em></h2></div><p>Unity Typing &amp; Travels brings government, documentation, business support and travel enquiries together under one approachable UAE-focused brand. The details matter. So does the way you move through them.</p></section>
         <section className="contact-section" id="contact"><div><p className="eyebrow"><span /> Your next move</p><h2>Have a question?<br /><em>Let’s talk.</em></h2><p className="contact-intro">Connect with the Unity team at the location that suits your enquiry.</p></div><div className="contact-panel"><div className="contact-list">{contactLocations.map((contact) => <div className="contact-location" key={contact.division}><span>{contact.division}</span><p>{contact.location}</p><a href={`tel:${contact.phone}`}>{contact.phone}</a></div>)}</div><small>No email, opening hours, WhatsApp link or map details have been supplied yet.</small></div></section>
       </main>}
-      <footer className="site-footer"><a className="brand" href="#top"><img className="brand-logo" src="/unity_logo.png" alt="Unity Typing & Travels logo" /><span><strong>UNITY TYPING &amp; TRAVELS</strong><small>OFFICIAL COMPANY NAME</small></span></a><p>Government services &amp; travel support, together.</p><span>© 2026 Unity Typing &amp; Travels</span></footer>
+      <footer className="site-footer"><a className="brand" href="#top"><img className="brand-logo" src={logoSrc} alt="Unity Typing & Travels logo" /><span><strong>UNITY TYPING &amp; TRAVELS</strong><small>OFFICIAL COMPANY NAME</small></span></a><p>Government services &amp; travel support, together.</p><span>© 2026 Unity Typing &amp; Travels</span></footer>
     </div>
   )
 }
