@@ -1,11 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-:root { font-family: 'Space Grotesk', 'Trebuchet MS', sans-serif; color: #e9e9ef; background: #090b11; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: #090b11; }
-button, a { font: inherit; }
-button { cursor: pointer; }
-a { color: inherit; }
-#root { min-height: 100svh; }
-:focus-visible { outline: 2px solid #58e2dd; outline-offset: 4px; }
+/* =====================================================
+   GLOBAL STYLES
+   Shared resets and typography used across the entire site.
+   ===================================================== */
+:root {
+  font-family: 'Space Grotesk', 'Trebuchet MS', sans-serif;
+  color: #e9e9ef;
+  background: #090b11;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #090b11;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+:focus-visible {
+  outline: 2px solid #58e2dd;
+  outline-offset: 4px;
+}
